@@ -1,0 +1,84 @@
+.buttons{
+    display: flex;
+    position: relative;
+    margin: 5px;
+    padding: 12px 26px;
+    font-size: 10px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #000;
+    border: 3px solid  white;
+
+}
+
+.colored-buttons {
+    background-color: rgba(239, 227, 226, 1);
+}
+#overlay-btn {
+    .border-radius;
+    position: absolute;
+    z-index: 1;
+    color: black;
+
+
+    &:hover {
+        background-color: rgb(204, 194, 193);
+        transition: all .6s ease-in-out;
+    }
+
+}
+
+  
+.read-more-btn {
+     .border-radius;
+     @apply border border-2 bg-red-600;
+     width: 8.5rem;
+
+  
+    &:hover{
+        transition: all .21s ease-in;
+        @apply bg-red-400;
+        color: #fff;
+    }
+  
+}
+
+.button-container {
+    display: flex;
+}
+
+
+.blog-button {
+    border: 1px solid grey;
+    border-radius: 50px;
+    padding: 0 1.2rem;
+    margin-right: 1rem;
+}
+
+.submit-button {
+
+    border-radius: 20px;
+    padding: 10px;
+    border: none;
+    text-align: center;
+}
+
+.button-circled {
+    border-radius: 100%;
+    width: 8em;
+    height: 8em;
+    line-height: 8em;
+    text-align: center;
+    font-size: 1em;
+    padding: 0;
+    background-color: rgba(0, 0, 0, 0.4);
+    color: #fff;
+    margin: 0 auto;
+    position: absolute;
+    &:hover {
+        background-color: rgba(0, 0, 0, 0.5);
+        border: 2px solid #fff;
+        transition: .2s ease-out;
+    }
+    cursor: pointer;
+}

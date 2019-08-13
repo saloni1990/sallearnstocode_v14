@@ -1,0 +1,116 @@
+
+<% include ./partials/header %>
+
+<h1>Vue.js Playground</h1>
+
+<div id="todos">
+        <div class="container">
+                        <input type="text" id="input" v-model="message">
+
+                        <h1 v-bind:class="className">The value of the input is: <span v-bind:style="{color:red}">{{message }}</span></h1>
+                
+                        
+                        <button v-on:click="addSeries">Add New TV Series</button>
+                        <input type="text" id="nameInput" v-model="newSeries">
+                        <ul>
+                        <li v-for="serie in series" v-text="serie">
+                
+                        </li>
+                        
+                        </ul>
+                
+                
+                        <button v-bind:title="title" >Hover over me</button>
+                        <button v-bind:class="{ 'is-loading': isLoading }" v-on:click="toggleClass">Change Color</button>
+                        <button v-bind:disabled="disabledButton">Disabled</button>
+                
+                        
+                
+                        <h1>
+                                {{ mainMessage.split('').reverse().join('') }}
+                                {{ reversedMessage }}
+                        </h1>
+                       
+                
+                        
+                
+                </div>
+                
+        </div>
+        <div class="container">
+                <h2>All Movies</h2>
+
+                <ul>
+                        <li  v-bind:class="{'completed': !movie.positive}" v-for="movie in movies" v-text="movie.title" >
+                                        
+                        </li>
+
+                        
+                        
+                        
+                </ul>
+                <div class="movie-ratings">
+                        <div class="top-rated-movie">
+                                <h2 style="font-weight:700; color:green;">Top-rated Movies</h2>
+                                <ul v-for="movie in positiveRating">
+                                        <li  v-if="movie.positive" v-text="movie.title">
+                                                
+                                        </li>
+                                        <div v-on:click="toggleRating(movie)" v-if="movie.positive" style="width:15%"><% include ../public/assets/dislike %></div>
+                                        
+                                        
+                                </ul> 
+                                <transition name="fade"  >
+                                        <div v-if="noMoviesPos">
+                                                <p>No movies to show</p> 
+                                        </div>
+                                        
+                                </transition>
+                                
+                        </div>
+
+                        <div class="low-rated movie">
+                                <h2 style="font-weight:700; color:red;">Low-rated Movies</h2>
+                                <ul v-for="movie in negativeRating">
+                                        <li class="" v-if="! movie.positive" v-text="movie.title"></li>
+                
+                                        <div v-on:click="toggleRating(movie)" v-if="!movie.positive" style="width:15%"><% include ../public/assets/heart %></div>
+                                </ul> 
+                                <transition name="fade">
+                                        <div v-if="noMoviesNeg">
+                                                <p>No movies to show</p> 
+                                        </div> 
+                                </transition>
+                                
+
+                        </div>
+
+                        
+                </div>
+
+                
+        
+                        
+        
+                        
+        </div>
+        
+<div class='container'>
+        <button class="buttons colored-buttons" id="overlay-btn" v-bind:title="title" v-on:click="togglePic">Change Width</button>
+        <img src="https://images.pexels.com/photos/1249214/pexels-photo-1249214.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500" 
+
+        v-bind:alt="title" 
+        v-bind:class="isHalfWidth == true ? 'half-width' : 'full-width' " 
+        v-on:click="togglePic"
+        class="transition-width" > 
+
+</div>
+<div class="container">
+        
+        <playground-message title="Hello World" body="Lorum ipsum dolar sit met"></playground-message>
+        <playground-message title="Hello July" body="Lorum ipsum dolar sit met"></playground-message>
+        <colors-list></colors-list>
+</div>
+
+<% include ./partials/footer %>
+

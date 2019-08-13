@@ -1,0 +1,112 @@
+/**
+ * This injects Tailwind's base styles, which is a combination of
+ * Normalize.css and some additional base styles.
+ *
+ * You can see the styles here:
+ * https://github.com/tailwindcss/tailwindcss/blob/master/css/preflight.css
+ *
+ * If using `postcss-import`, use this import instead:
+ *
+ * @import "tailwindcss/preflight";
+ */
+ @tailwind base;
+
+ /**
+   * This injects any component classes registered by plugins.
+   *
+   * If using `postcss-import`, use this import instead:
+   *
+   * @import "tailwindcss/components";
+   */
+ @tailwind components;
+ 
+ /**
+   * Here you would add any of your custom component classes; stuff that you'd
+   * want loaded *before* the utilities so that the utilities could still
+   * override them.
+   *
+   * Example:
+   *
+   * .btn { ... }
+   * .form-input { ... }
+   *
+   * Or if using a preprocessor or `postcss-import`:
+   *
+ 
+   * @import "components/forms";
+   */
+@import "components/variables";
+@import "components/navigation";
+@import "components/footer";
+@import "components/slick";
+@import "components/card.less";
+@import "components/buttons.less";
+@import "components/todos.less";
+@import "components/overall.less";
+@import "components/images.less";
+@import "components/typography.less";
+
+
+/**
+  * This injects all of Tailwind's utility classes, generated based on your
+  * config file.
+  *
+  * If using `postcss-import`, use this import instead:
+  *
+  * @import "tailwindcss/utilities";
+  */
+  @tailwind utilities;
+
+  /**
+	* Here you would add any custom utilities you need that don't come out of the
+	* box with Tailwind.
+	*
+	* Example :
+	*
+	* .bg-pattern-graph-paper { ... }
+	* .skew-45 { ... }
+	*
+	* Or if using a preprocessor or `postcss-import`:
+	*
+	* @import "utilities/background-patterns";
+	* @import "utilities/skew-transforms";
+	*/
+  
+img.logo {
+	display: flex;
+	width: 25%;
+	margin: 10vh auto;
+
+}
+
+.alert {
+	font-size: 0.4rem;
+}
+a {
+	text-decoration: none;
+}
+
+.formStyle {
+	width: 60%;
+	margin: 0 auto;
+}
+.formStyle input {
+    width: 100%;
+}
+
+.pageTitle {
+	margin-top: 1.0em;
+}
+
+.delete-form{
+	display: inline;
+}
+
+/*MAP*/
+
+iframe {
+	width: 600px;
+	height: 450px;
+	padding-bottom: 1.25rem;
+}
+

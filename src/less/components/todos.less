@@ -1,0 +1,91 @@
+
+.color-blue {
+  color: rgb(45, 144, 236);
+}
+
+.half-width {
+  width: 50%;
+
+}
+
+.full-width {
+  width: 100%;
+}
+
+
+.is-loading {
+  background-color: black;
+}
+
+button:focus{
+outline:none;
+}
+
+#todos {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px 0 10px 0;
+
+}
+#todos button, input {
+  width: 50%;
+  margin: 10px 0;
+
+}
+
+#todos ul li {
+  display: flex;
+  flex-direction: row;
+}
+
+
+img {
+  max-width: 100%;
+  height: auto;
+  margin: 0 auto;
+  display: block;
+}
+
+.transition-width {
+  transition: width 0.5s ease-in-out;
+}
+
+.completed {
+  text-decoration: line-through;
+  color: green;
+
+}
+
+
+.movie-ratings {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  margin: auto 0;
+  padding: 0 20px;
+
+  ul{
+    width: 100%;
+
+    list-style: none;
+  }
+}
+
+.fade-enter-active {
+  transition: opacity .7s;
+}
+
+.fade-leave-active {
+  transition: opacity .1s;
+}
+.fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
+  opacity: 0;
+}
+
+.fade-enter:hover {
+  width: 100%;
+}

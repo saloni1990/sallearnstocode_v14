@@ -1,0 +1,145 @@
+Html Webpack Plugin:
+<pre>
+  Error: Child compilation failed:
+  Module build failed (from ./node_modules/babel-loader/lib/index.js):
+  SyntaxError: /Users/saloni/Downloads/v14/node_modules/tar/tar.js: Legacy octal literals are not allowed in strict mode (108:10)
+    106 | // values for the mode field
+    107 | var modes =
+  > 108 |   { suid: 04000 // set uid on extraction
+        |           ^
+    109 |   , sgid: 02000 // set gid on extraction
+    110 |   , svtx: 01000 // set restricted deletion flag on dirs on extraction
+    111 |   , uread:  0400
+  
+  - index.js:6325 Parser.raise
+    [v14]/[@babel]/parser/lib/index.js:6325:17
+  
+  - index.js:7177 Parser.readNumber
+    [v14]/[@babel]/parser/lib/index.js:7177:14
+  
+  - index.js:6949 Parser.getTokenFromCode
+    [v14]/[@babel]/parser/lib/index.js:6949:14
+  
+  - index.js:6525 Parser.nextToken
+    [v14]/[@babel]/parser/lib/index.js:6525:12
+  
+  - index.js:6465 Parser.next
+    [v14]/[@babel]/parser/lib/index.js:6465:10
+  
+  - index.js:6470 Parser.eat
+    [v14]/[@babel]/parser/lib/index.js:6470:12
+  
+  - index.js:9280 Parser.parseObjectProperty
+    [v14]/[@babel]/parser/lib/index.js:9280:14
+  
+  - index.js:9306 Parser.parseObjPropValue
+    [v14]/[@babel]/parser/lib/index.js:9306:101
+  
+  - index.js:9230 Parser.parseObjectMember
+    [v14]/[@babel]/parser/lib/index.js:9230:10
+  
+  - index.js:9154 Parser.parseObj
+    [v14]/[@babel]/parser/lib/index.js:9154:25
+  
+  - index.js:8784 Parser.parseExprAtom
+    [v14]/[@babel]/parser/lib/index.js:8784:28
+  
+  - index.js:8412 Parser.parseExprSubscripts
+    [v14]/[@babel]/parser/lib/index.js:8412:23
+  
+  - index.js:8392 Parser.parseMaybeUnary
+    [v14]/[@babel]/parser/lib/index.js:8392:21
+  
+  - index.js:8267 Parser.parseExprOps
+    [v14]/[@babel]/parser/lib/index.js:8267:23
+  
+  - index.js:8240 Parser.parseMaybeConditional
+    [v14]/[@babel]/parser/lib/index.js:8240:23
+  
+  - index.js:8187 Parser.parseMaybeAssign
+    [v14]/[@babel]/parser/lib/index.js:8187:21
+  
+  - index.js:10480 Parser.parseVar
+    [v14]/[@babel]/parser/lib/index.js:10480:26
+  
+  - index.js:10299 Parser.parseVarStatement
+    [v14]/[@babel]/parser/lib/index.js:10299:10
+  
+  - index.js:9896 Parser.parseStatementContent
+    [v14]/[@babel]/parser/lib/index.js:9896:21
+  
+  - index.js:9829 Parser.parseStatement
+    [v14]/[@babel]/parser/lib/index.js:9829:17
+  
+  - index.js:10405 Parser.parseBlockOrModuleBlockBody
+    [v14]/[@babel]/parser/lib/index.js:10405:25
+  
+  - index.js:10392 Parser.parseBlockBody
+    [v14]/[@babel]/parser/lib/index.js:10392:10
+  
+  - index.js:9758 Parser.parseTopLevel
+    [v14]/[@babel]/parser/lib/index.js:9758:10
+  
+  - index.js:11270 Parser.parse
+    [v14]/[@babel]/parser/lib/index.js:11270:17
+  
+  - index.js:11306 parse
+    [v14]/[@babel]/parser/lib/index.js:11306:38
+  
+  - normalize-file.js:170 parser
+    [v14]/[@babel]/core/lib/transformation/normalize-file.js:170:34
+  
+  - normalize-file.js:138 normalizeFile
+    [v14]/[@babel]/core/lib/transformation/normalize-file.js:138:11
+  
+  - index.js:44 runSync
+    [v14]/[@babel]/core/lib/transformation/index.js:44:43
+  
+  - index.js:35 runAsync
+    [v14]/[@babel]/core/lib/transformation/index.js:35:14
+  
+  - transform.js:34 process.nextTick
+    [v14]/[@babel]/core/lib/transform.js:34:34
+  
+  
+  - SyntaxError: /Users/saloni/Downloads/v14/node_modules/tar/tar.js: Legacy octal literals are not allowed in strict mode (108:10)
+  
+  -   106 | // values for the mode field
+  
+  -   107 | var modes =
+  
+  - > 108 |   { suid: 04000 // set uid on extraction
+  
+  -       |           ^
+  
+  -   109 |   , sgid: 02000 // set gid on extraction
+  
+  -   110 |   , svtx: 01000 // set restricted deletion flag on dirs on extraction
+  
+  -   111 |   , uread:  0400
+  
+  - Module not found: Error: Can't resolve 'atpl' in '/Users/saloni/Downloads/v14/node_modules/consolidate/lib':
+  
+  - Error: Can't resolve 'atpl' in '/Users/saloni/Downloads/v14/node_modules/consolidate/lib'
+  
+  - Module not found: Error: Can't resolve 'aws-sdk' in '/Users/saloni/Downloads/v14/node_modules/fsevents/node_modules/node-pre-gyp/lib':
+  
+  - Error: Can't resolve 'aws-sdk' in '/Users/saloni/Downloads/v14/node_modules/fsevents/node_modules/node-pre-gyp/lib'
+  
+  - Module not found: Error: Can't resolve 'aws-sdk' in '/Users/saloni/Downloads/v14/node_modules/fsevents/node_modules/node-pre-gyp/lib':
+  
+  - Error: Can't resolve 'aws-sdk' in '/Users/saloni/Downloads/v14/node_modules/fsevents/node_modules/node-pre-gyp/lib'
+  
+  - Module not found: Error: Can't resolve 'aws-sdk' in '/Users/saloni/Downloads/v14/node_modules/fsevents/node_modules/node-pre-gyp/lib':
+  
+  - Error: Can't resolve 'aws-sdk' in '/Users/saloni/Downloads/v14/node_modules/fsevents/node_modules/node-pre-gyp/lib'
+  
+  - Module not found: Error: Can't resolve 'bracket-template' in '/Users/saloni/Downloads/v14/node_modules/consolidate/lib':
+  
+  - Error: Can't resolve 'bracket-template' in '/Users/saloni/Downloads/v14/node_modules/consolidate/lib'
+  
+  - Module not found: Error: Can't resolve 'coffee-script' in '/Users/saloni/Downloads/v14/node_modules/consolidate/lib':
+  
+  - Error: Can't resolve 'coffee-script' in '/Users/saloni/Downloads/v14/node_modules/consolidate/lib'
+  
+</pre><script type="text/javascript" src="app.js"></script>

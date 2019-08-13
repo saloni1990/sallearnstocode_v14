@@ -1,0 +1,128 @@
+
+<% include ./partials/header %>
+
+	<div class="container-full">
+		<div class="img-gallery flex flex-col md:flex-row">
+			<div class="main-box flex w-full md:w-1/2">
+					<div class="main-img">
+						<img src="https://images.pexels.com/photos/2268728/pexels-photo-2268728.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" alt="">	
+					</div>
+					<div class="main-heading">
+						<h1>Sal Learns to Code</h1>
+						<p>A beginner learning to code</p>
+						
+
+					</div>
+			</div>
+			
+	
+			<div class="stacked-img flex flex-col w-full md:w-1/2">
+				<div class="flex flex-col pt-2 pr-2">
+					<div class="main-img">
+							<img src="https://images.pexels.com/photos/509922/pexels-photo-509922.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" alt="">
+						
+					</div>
+	
+					<div class="main-heading">
+						<h1 class="welcome"> Welcome <%= topicshead %> </h1>
+						<form action="/" method="POST" style="text-align:center">
+							<input class="homepage" type="text" name="fname" placeholder="Your Name"></input>
+							<button class="submit-button">Submit</button>
+						</form>	
+					</div>
+				</div>
+				<div class="flex flex-col pt-2 pr-2">
+					<div class="main-img">
+						<transition name="fade">
+							<div v-if="showText" class="gradient"></div>
+						</transition>
+						<img src="https://images.pexels.com/photos/1549201/pexels-photo-1549201.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260" alt="">
+					</div>
+					<div class="button-circled align-center" v-show="!showText" v-on:click="showText = true">About</div>
+					<div class="flex w-full absolute z-10 items-start cursor-pointer" v-show="showText" v-on:click="showText = false">X</div>
+					<transition name="fade">
+
+						<div v-show="showText" class="main-heading">
+							<div class="test">
+								
+								<h1>Saloni Robinson</h1>
+								<about-message experience="Who? Self-taught full stack web developer"></about-message>
+								<about-message experience="How? Completed Web Developer Bootcamp"></about-message>
+								<about-message experience="What? Blog app built with Node js, Express, Vue.js"></about-message>
+								<about-message experience="Why? Enjoy what I do for a living"></about-message>
+								<about-message experience="Where? volunteering at a web development company"></about-message>
+							</div>
+							
+						</div>
+					</transition>
+							
+				</div>
+</div>
+		</div>
+
+	</div>
+
+		
+		<div class="projects">
+			<h1>Projects</h1>
+			<div class="card-wrapper">
+						<ul class="cards">
+								<li class="cards__item">
+									
+									<div class="cardv3">
+										<div><img class="post-img" src=""> </div>
+										<div class="card__content">
+											<div class="card__content__wrapper">
+												<h4 class="cardTitle"><a href="#">Refined Landscapes</a></h4>
+	
+													<p> Lorem ipsum dolor sit, amet consectetur adipisicing elit. Qui, eligendi saepe explicabo, alias tempore molestiae assumenda odit nulla reprehenderit maxime, neque eaque similique blanditiis suscipit quas ducimus cupiditate tempora amet.</p>  
+											</div>
+					
+											<a href="#" class="buttons read-more-btn">Read More</a>
+										</div>
+									</div>
+								</li>
+
+								<li class="cards__item">
+									
+									<div class="cardv3">
+										<div><img class="post-img" src=""> </div>
+										<div class="card__content">
+											<div class="card__content__wrapper">
+												<h4 class="cardTitle"><a href="#">London Equity Release Advice</a></h4>
+	
+													<p> Lorem ipsum dolor sit, amet consectetur adipisicing elit. Qui, eligendi saepe explicabo, alias tempore molestiae assumenda odit nulla reprehenderit maxime, neque eaque similique blanditiis suscipit quas ducimus cupiditate tempora amet.</p>  
+											</div>
+					
+											<a href="#" class="buttons read-more-btn">Read More</a>
+										</div>
+									</div>
+								</li>
+
+								<li class="cards__item">
+									
+										<div class="cardv3">
+											<div><img class="post-img" src=""> </div>
+											<div class="card__content">
+												<div class="card__content__wrapper">
+													<h4 class="cardTitle"><a href="#">Master Private Finance</a></h4>
+		
+														<p> Lorem ipsum dolor sit, amet consectetur adipisicing elit. Qui, eligendi saepe explicabo, alias tempore molestiae assumenda odit nulla reprehenderit maxime, neque eaque similique blanditiis suscipit quas ducimus cupiditate tempora amet.</p>  
+												</div>
+						
+												<a href="#" class="buttons read-more-btn">Read More</a>
+											</div>
+										</div>
+									</li>
+						</ul>
+			</div>
+			
+
+		</div>
+
+		<div class="about">
+
+			<% include partials/about %>
+		</div>
+
+<% include partials/footer %>

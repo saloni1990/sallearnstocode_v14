@@ -1,0 +1,43 @@
+<% include ./partials/header %>
+
+<div class=row>
+
+     <div class="formStyle">
+          <h1 id="login">Login</h1>
+          
+          <a href="/" class="bg-gray-300"> Go Back</a>
+          
+     </div>     
+</div>
+
+<!-- VUE MODAL -->
+
+<h1 class="font-bold text-2xl text-gray-900 ">Example Project</h1>
+<p class="mb-6">This is just a example text for my tutorial.</p>
+
+<button
+     class="bg-blue-600 text-white px-4 py-2 text-sm uppercase tracking-wide font-bold rounded-lg"
+     v-on:click="exampleModalShowing = true"
+>
+     Login
+</button>
+<card-modal v-bind:showing="exampleModalShowing">
+     <form action="/login" method="POST">
+          <div class="form-group">
+               <label>Username:</label>
+               <input type="text" name="username" placeholder="username">
+          </div>
+          <div class="form-group">
+               <label>Password:</label>
+               <input type="password" name="password" placeholder="password">
+          </div>
+          
+          <div class="form-group">
+               <button class="read-more-btn">Login</button>
+          </div>
+     </form>
+ </card-modal>
+
+
+
+<% include ./partials/footer %>

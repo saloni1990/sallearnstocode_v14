@@ -1,0 +1,72 @@
+<% include ../partials/header %>
+    <div class="w-full flex flex-wrap max-w-6xl mx-auto">  
+        <h1 class="w-full text-center text-4xl py-8 uppercase tracking-wide"><a href="/blog/<%= blog._id %>"><%= blog.title %></a></h1>       
+        <div class="w-full text-center">
+                    <div class=" mb-8 rounded-sm">
+                        <div class="flex justify-center items-end">
+                            <div class="w-3/4">
+                                <img class="rounded-lg" src="<%= blog.image %>"> 
+                            </div>
+                            <div class="absolute z-10 bg-white w-1/2 p-8 rounded-t-lg shadow">
+                                    <h1 class="w-full text-center"><a href="/blog/<%= blog._id %>"><%= blog.title %></a></h1> 
+                                    <p class=""><em>Submitted by <%= blog.author.username%></em></p>
+                            </div>
+                            
+                        </div>
+                        <div class="card__content shadow-md rounded-sm">
+                                <div class=" text-center bg-orange-500">
+                                    
+                                        <p><%=blog.post%></p>
+                                        <div class="button-container">
+                                            <% if(currentUser && blog.author.id.equals(currentUser._id)) {%>
+                                                <a class="blog-button" id="edit-button" href="/blog/<%=blog._id%>/edit">Edit</a>
+                                                <form class="delete-form"action="/blog/<%=blog._id %>?_method=DELETE" method="POST">
+                                                    <button  class="blog-button">Delete</button>   
+                                                </form>
+                                            <% } %>    
+                                            <a class="blog-button" href="/blog/<%= blog._id %>/comments/new">Add Comment</a>
+                                        </div>
+                                    </div>
+                        </div>
+                    </div>
+            
+            <!-- COMMENTS SECTION-->
+            <hr>
+                    <div class="comment">
+                <!-- <% if(blog.comments.length > 0) { %> -->
+                <h1>Comments</h1>
+                <!-- <% } %> -->
+                <% blog.comments.forEach(function(comment){ %>
+
+                        <div class="comment-header">
+                                <div class="button-container comment-buttons">
+                                        <% if(currentUser && comment.author.id.equals(currentUser._id)) {%>
+                                            <a class="blog-button" href="/blog/<%= blog._id%>/comments/<%= comment._id %>/edit"><i class="fas fa-pen-square"></i></a>
+                                            <form class="delete-form"action="/blog/<%= blog._id%>/comments/<%= comment._id %>?_method=DELETE" method="POST">
+                                                <button class="blog-button"><i class="fas fa-trash-alt"></i></button>   
+                                            </form>
+                                        <% } %>  
+                                    </div> 
+                                    <span class="author"><%= comment.author.username %></span>
+                        </div>                
+                        
+                        <span class="date">10 days ago</span>
+                        <p><%= comment.text %></p>
+
+                        <hr>
+                
+                <% }) %>           
+            </div>
+        </div>
+        
+        <!-- ABOUT SECTION-->
+        <div class="w-full">
+            <% include ../partials/about %> 
+        </div>    
+    </div>
+
+    
+
+
+
+<% include ../partials/footer %>
