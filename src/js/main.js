@@ -1,22 +1,17 @@
 
 
 $(document).ready(function(){
-    $('.single-item').slick({
-    });
-    // $('.toggleNav').on('click', function(){
-    //     $('.flex-nav ul').toggleClass('open');
-    // });
+    $('.single-item').slick();
+
 });
 
 import Vue from 'vue';
-import VueFullPage from 'vue-fullpage.js'
 
-Vue.use(VueFullPage);
 
 Vue.component('card-modal', require('./components/cardModal.vue').default);
 Vue.component('mobile-nav', require('./components/mobileNav.vue').default);
 
-
+Vue.config.ignoredElements = ['trix-editor']
 
 Vue.component('about-close', {
 
