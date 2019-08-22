@@ -21,26 +21,30 @@
 	<link rel="stylesheet" type="text/css" href="/css/style.css">
 	<!-- <link rel="stylesheet" type="text/css" href="/postcss/style.css"> -->
   <!-- <link rel="stylesheet" href="/stylesheets/landing.css"> -->
-  <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500i,600,800&display=swap" rel="stylesheet">
 
   <!-- SLICK THEME -->
   <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/kenwheeler/slick@1.8.1/slick/slick.css">
   <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/kenwheeler/slick@1.8.1/slick/slick-theme.css">
 	<!-- FONTAWESOME  -->
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+	<!-- TRIX EDITOR  -->
+  <link rel="stylesheet" type="text/css" href="/library/trix/trix.css">
+  <script type="text/javascript" src="/library/trix/trix.js"></script>
 </head>
 
 <body>
 
     <div id="app" class="">
-     <mobile-nav class="flex-wrap">
+     <mobile-nav class="flex-wrap md:hidden">
 
-            <ul class="flex w-full flex-col justify-center items-center">
+            <ul class="flex w-full flex-col text-md justify-center items-center align-center font-thin">
                 <li><a href="/">Home</a></li>
                 <li><a href="/blog">Blog</a></li>
                 <li><a href="#about">About</a></li>
                 <li><a href="#contact">Contact</a></li>
-                <!--if no user, then we will show login or register-->
+                <!--
+                 // if no user, then we will show login or register
                 <li>
                     <% if(!currentUser){ %>
                       <span></span>
@@ -52,12 +56,13 @@
                   <li><a  href="/login">Login</a></li>
                   <li><a  href="/register">Sign Up</a></li>
                 <% } else { %>
-              <!--else show logout link-->
+              //else show logout link
                   <li><a class="#" href="/logout">Log Out</a></li>
                 
                 <% } %>
+                -->
                 </ul>
-                <ul class="w-full flex flex-row justify-center">
+                <ul class="w-full flex flex-row justify-center mx-auto">
                   <li class="social w-1/4"><a href="https://github.com/saloni1990/" target="_blank"><i class="fab fa-github"></i></a></li>
                   <li class="social w-1/4"><a href="https://www.facebook.com/saloni.chaganlal" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
                   <li class="social w-1/4"><a href="https://www.linkedin.com/in/saloni1990/" target="_blank"><i class="fab fa-linkedin-in"></i></a></li>
@@ -66,32 +71,38 @@
 
             </ul>
      </mobile-nav>
-    <nav class="flex-nav">
-        <ul>
-            <li class="brand"><a href="/"><i class="fas fa-code"></i>  Sal Learns to Code</a></li>
-            <li><a href="/">Home</a></li>
-            <li><a href="/blog">Blog</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#contact">Contact</a></li>
-            <!--if no user, then we will show login or register-->
-            <li>
-                <% if(!currentUser){ %>
-                  <span></span>
-                <% } else { %>
-                  <a><span>Logged in as <%= currentUser.username %></span></a>
-                <% } %>
-            </li>
-            <% if(!currentUser){ %>
-              <li><a  href="/login">Login</a></li>
-              <li><a  href="/register">Sign Up</a></li>
-            <% } else { %>
-          <!--else show logout link-->
-              <li><a class="#" href="/logout">Log Out</a></li>
+    <nav class="hidden md:block">
+      <div class="w-full mx-auto text-center pt-4 text-xl tracking-widest">
+        <h1 class=""><a href="/"><i class="fas fa-code"></i> Sal Learns to Code</a></h1>
+      </div>
+      <div class="navigation font-thin">
+        <ul class="">
             
-            <% } %>
-        </ul>
-        
-
+          <li><a href="/">Home</a></li>
+          <li><a href="/blog">Blog</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#contact">Contact</a></li>
+          <!--
+         // if no user, then we will show login or register
+          <li>
+              <% if(!currentUser){ %>
+                <span></span>
+              <% } else { %>
+                <a><span>Logged in as <%= currentUser.username %></span></a>
+              <% } %>
+          </li>
+          <% if(!currentUser){ %>
+            <li><a  href="/login">Login</a></li>
+            <li><a  href="/register">Sign Up</a></li>
+          <% } else { %>
+        // else show logout link
+            <li><a class="#" href="/logout">Log Out</a></li>
+          
+          <% } %>
+          -->
+      </ul>
+      
+      </div>
     </nav>
 
     <% if (error && error.length > 0){ %>

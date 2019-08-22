@@ -1,127 +1,144 @@
 
 <% include ./partials/header %>
 
-	<div class="container-full">
-		<div class="img-gallery flex flex-col md:flex-row">
-			<div class="main-box flex w-full md:w-1/2">
-					<div class="main-img">
-						<img src="https://images.pexels.com/photos/2268728/pexels-photo-2268728.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" alt="">	
-					</div>
-					<div class="main-heading">
-						<h1>Sal Learns to Code</h1>
-						<p>A beginner learning to code</p>
-						
+	<div class="container-full mb-12">
+		<div class="img-gallery flex flex-col md:flex-row text-center">
+			<div class="main-box relative flex justify-center w-full md:w-1/2 p-2">
+				<div class="main-img">
+					<img src="https://images.pexels.com/photos/2268728/pexels-photo-2268728.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" alt="">	
+				</div>
+				<div class="main-heading  w-full text-center">
+				<div class="py-8">
+					<h1 class="text-2xl pb-2">Sal Learns to Code</h1>
+					<p>A beginner learning to code</p>
+				</div>
 
-					</div>
+					<h1 class="welcome"> Welcome <%= topicshead %> </h1>
+					<form action="/" method="POST" class="flex flex-col justify-center items-center">
+						<input class="homepage" type="text" name="fname" placeholder="Enter your name"></input>
+						<button class="buttons submit-button">Submit</button>
+					</form>	
+				</div>
 			</div>
 			
 	
-			<div class="stacked-img flex flex-col w-full md:w-1/2">
-				<div class="flex flex-col pt-2 pr-2">
-					<div class="main-img">
-							<img src="https://images.pexels.com/photos/509922/pexels-photo-509922.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" alt="">
+			<div class="stacked-img w-full flex flex-col md:w-1/2">
+				<div class="flex flex-col p-2 -ml-2 -mb-2">
+					<div class="main-img relative flex items-center justify-center">
+						<img src="https://images.pexels.com/photos/509922/pexels-photo-509922.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" alt="">
+						<div class="absolute flex justify-center items-center">
+							<button class="button-circled">
+								<a href="#projects" class="text-white">Projects </a>
+								
+							</button>
+						</div>
 						
 					</div>
-	
-					<div class="main-heading">
-						<h1 class="welcome"> Welcome <%= topicshead %> </h1>
-						<form action="/" method="POST" style="text-align:center">
-							<input class="homepage" type="text" name="fname" placeholder="Your Name"></input>
-							<button class="submit-button">Submit</button>
-						</form>	
-					</div>
+
+				
 				</div>
-				<div class="flex flex-col pt-2 pr-2">
-					<div class="main-img">
+				<div class="flex relative p-2 -ml-2 justify-center">
+					<div class="main-img relative items-center justify-center">
 						<transition name="fade">
 							<div v-if="showText" class="gradient"></div>
 						</transition>
 						<img src="https://images.pexels.com/photos/1549201/pexels-photo-1549201.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260" alt="">
-					</div>
-					<div class="button-circled align-center" v-show="!showText" v-on:click="showText = true">About</div>
-					<div class="flex w-full absolute z-10 items-start cursor-pointer" v-show="showText" v-on:click="showText = false">X</div>
-					<transition name="fade">
 
-						<div v-show="showText" class="main-heading">
-							<div class="test">
+						<div class="flex absolute justify-center items-center">
+								<button class="button-circled" v-show="!showText" v-on:click="showText = true">
+									Experience
+								</button>
+						</div>
+
+						<transition name="fade">
+
+							<div v-show="showText " class="main-heading absolute w-full leading-loose text-gray-300">
+								<div class="test">
+									
+									<h1 class="mb-4 text-2xl">Saloni Robinson</h1>
+									<about-message experience="Who? Self-taught full stack web developer"></about-message>
+									<about-message experience="How? Completed Web Developer Bootcamp"></about-message>
+									<about-message experience="What? Blog app built with Node js, Express, Vue.js"></about-message>
+									<about-message experience="Why? Enjoy what I do for a living"></about-message>
+									<about-message experience="Where? volunteering at a web development company"></about-message>
+								</div>
 								
-								<h1>Saloni Robinson</h1>
-								<about-message experience="Who? Self-taught full stack web developer"></about-message>
-								<about-message experience="How? Completed Web Developer Bootcamp"></about-message>
-								<about-message experience="What? Blog app built with Node js, Express, Vue.js"></about-message>
-								<about-message experience="Why? Enjoy what I do for a living"></about-message>
-								<about-message experience="Where? volunteering at a web development company"></about-message>
 							</div>
+						</transition>
 							
+					</div>
+					<transition name="fade">
+						<div class="absolute flex items-start justify-center">
+							<button class="buttons submit-button z-10" v-on:click="showText = false" v-show="showText">
+								Close
+							</button>
 						</div>
 					</transition>
-							
 				</div>
-</div>
+			</div>
 		</div>
-
 	</div>
 
 		
-		<div class="projects">
-			<h1>Projects</h1>
-			<div class="card-wrapper">
-						<ul class="cards">
-								<li class="cards__item">
-									
-									<div class="cardv3">
-										<div><img class="post-img" src=""> </div>
-										<div class="card__content">
-											<div class="card__content__wrapper">
-												<h4 class="cardTitle"><a href="#">Refined Landscapes</a></h4>
-	
-													<p> Lorem ipsum dolor sit, amet consectetur adipisicing elit. Qui, eligendi saepe explicabo, alias tempore molestiae assumenda odit nulla reprehenderit maxime, neque eaque similique blanditiis suscipit quas ducimus cupiditate tempora amet.</p>  
-											</div>
-					
-											<a href="#" class="buttons read-more-btn">Read More</a>
-										</div>
-									</div>
-								</li>
-
-								<li class="cards__item">
-									
-									<div class="cardv3">
-										<div><img class="post-img" src=""> </div>
-										<div class="card__content">
-											<div class="card__content__wrapper">
-												<h4 class="cardTitle"><a href="#">London Equity Release Advice</a></h4>
-	
-													<p> Lorem ipsum dolor sit, amet consectetur adipisicing elit. Qui, eligendi saepe explicabo, alias tempore molestiae assumenda odit nulla reprehenderit maxime, neque eaque similique blanditiis suscipit quas ducimus cupiditate tempora amet.</p>  
-											</div>
-					
-											<a href="#" class="buttons read-more-btn">Read More</a>
-										</div>
-									</div>
-								</li>
-
-								<li class="cards__item">
-									
-										<div class="cardv3">
-											<div><img class="post-img" src=""> </div>
-											<div class="card__content">
-												<div class="card__content__wrapper">
-													<h4 class="cardTitle"><a href="#">Master Private Finance</a></h4>
-		
-														<p> Lorem ipsum dolor sit, amet consectetur adipisicing elit. Qui, eligendi saepe explicabo, alias tempore molestiae assumenda odit nulla reprehenderit maxime, neque eaque similique blanditiis suscipit quas ducimus cupiditate tempora amet.</p>  
-												</div>
+		<div id="projects" class="mt-8 w-full text-center">
+			<h1 class="text-3xl text-center mb-4 tracking-wider">Projects</h1>
+			<p class="pb-8">All websites uses a custom-built CMS, powered by Statamic. </p>
+			<div class="card-wrapper text-center">
+				<ul class="cards">
+					<li class="cards-item">
 						
-												<a href="#" class="buttons read-more-btn">Read More</a>
-											</div>
-										</div>
-									</li>
-						</ul>
+						<div class="cardv3">
+							<div><img class="post-img" src="https://res.cloudinary.com/saloni/image/upload/v1565807060/RL_lhp3dm.jpg"> </div>
+							<div class="card-content">
+								<div class="card__content__wrapper">
+									<h2 class="card-title"><a href="#">Refined Landscapes</a></h2>
+									
+										<p> Refined Landscapes wanted to create a space to showcase their services and case studies, including a contact form for prospective clients.</p>  
+								</div>
+								<div class="flex justify-center text-center">
+									<a href="https://www.refinedlandscapes.com/" target="_blank" class="buttons read-more-btn">View Project</a>
+								</div>	
+							</div>
+						</div>
+					</li>
+
+					<li class="cards-item">
+						
+						<div class="cardv3">
+							<div><img class="post-img" src="https://res.cloudinary.com/saloni/image/upload/v1565807060/LERA_ezqacu.jpg"> </div>
+							<div class="card-content">
+								<div class="card__content__wrapper">
+									<h4 class="card-title"><a href="#">London Equity Release Advice</a></h4>
+
+										<p>A space to showcase case studies and how the company's service could helpt their clients with Equity Release. A custom Vue calculator was built to determine the borrowing amount.</p>  
+								</div>
+								<div class="flex justify-center text-center">
+									<a href="https://londonequityreleaseadvice.co.uk" target="_blank" class="buttons read-more-btn">View Project</a>
+								</div>	
+							</div>
+						</div>
+					</li>
+
+					<li class="cards-item">
+						<div class="cardv3">
+							<div><img class="post-img" src="https://res.cloudinary.com/saloni/image/upload/v1565807059/MPF_khzmzh.jpg"> </div>
+							<div class="card-content">
+								<div class="card__content__wrapper">
+									<h4 class="card-title"><a href="#">Master Private Finance</a></h4>
+
+										<p> Lorem ipsum dolor sit, amet consectetur adipisicing elit. Qui, eligendi saepe explicabo, alias tempore molestiae assumenda odit nulla reprehenderit maxime, neque eaque similique blanditiis suscipit quas ducimus cupiditate tempora amet.</p>  
+								</div>
+								<div class="flex justify-center text-center">
+
+									<a href="https://masterprivatefinance.co.uk/" target="_blank" class="buttons read-more-btn">View Project</a>
+								</div>	
+							</div>
+						</div>
+					</li>
+				</ul>
 			</div>
-			
-
 		</div>
-
 		<div class="about">
-
 			<% include partials/about %>
 		</div>
 
