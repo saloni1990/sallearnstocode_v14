@@ -32,6 +32,7 @@ gulp.task('watch', function(){
     gulp.watch('./src/less/**/*.less', ['compile-less']);
     gulp.watch('./src/js/**/**.vue');
     gulp.watch('./src/js/**.js');
+    gulp.watch('tailwind.js');
     gulp.watch('./views/**/**/**.ejs', ['styles']);
 
 });
