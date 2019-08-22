@@ -684,133 +684,72 @@ a {
   color: rgba(0, 0, 0, 0.9);
 }
 
-.flex-nav {
+nav {
   background-color: #edf2f7;
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
 }
 
-@media (min-width: 768px) {
-  .top {
-    display: none;
-  }
-}
-
-.flex-nav .brand {
+nav .brand {
   flex-basis: 100%;
   font-size: 20px;
+}
+
+nav .navigation {
+  display: flex;
+  justify-content: center;
+}
+
+nav .navigation ul {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  list-style-type: none;
+  flex-wrap: wrap;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  max-width: 72rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+nav .navigation ul li {
+  font-size: 0.875rem;
+  letter-spacing: 0.05em;
+  padding-left: 1rem;
+  padding-right: 1rem;
 }
 
 .top {
   font-size: 1.125rem;
   font-weight: 700;
   background-color: #edf2f7;
+  text-align: center;
 }
 
 .top a {
   font-weight: 100;
-  letter-spacing: 2px;
+  letter-spacing: 0.025em;
   text-decoration: none;
-  padding: 20px 0;
-  display: inline-block;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
   width: 100%;
   text-align: center;
   transition: all 0.5s;
 }
 
-.flex-nav ul li a {
-  font-weight: 100;
-  letter-spacing: 2px;
-  text-decoration: none;
-  padding: 20px 5px;
-  display: inline-block;
-  width: 100%;
-  text-align: center;
-  transition: all 0.5s;
-}
-
-.flex-nav ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  display: flex;
-  flex-wrap: wrap;
-}
-
-.flex-nav li {
-  flex: 3;
-  flex-wrap: wrap;
-  font-size: 10px;
-}
-
-.flex-nav .social {
-  flex: 0;
-}
-
-@media all and (max-width: 850px) {
-  /* Flex Container */
-
-  .flex-nav ul li {
-    flex-basis: 100%;
-  }
-
-  .flex-nav ul li a {
-    padding: 5px;
-    font-size: 0.8rem;
-  }
-
-  .flex-nav ul .brand {
-    display: none;
-  }
-
-  .wrapper {
-    display: flex;
-    flex-direction: column;
-  }
-
-  /* Flex item */
-
-  .wrapper > * {
-    order: 999;
-  }
-
-  .flex-nav {
-    order: 1;
-  }
-
-  .top .toggleNav {
-    display: block;
-  }
-
-  .flex-nav ul {
-    display: none;
-  }
-
-  .flex-nav ul.open {
-    display: flex;
-  }
-
-  .flex-nav ul.hover {
-    display: flex;
-  }
-
-  .top {
-    order: 2;
-  }
-
-  .flex-nav .social {
-    flex: 1 1 25%;
-  }
+.top li {
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
 }
 
 footer {
   background: #f8f9fa;
-  height: 100%;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  margin: 0 auto;
+  align-items: flex-end;
 }
 
 .social-footer {
@@ -838,6 +777,7 @@ footer {
 
 .social-footer a:hover {
   transition: all 0.21s ease-in;
+  background-color: #718096;
 }
 
 .footer-content {
@@ -857,44 +797,21 @@ footer {
 }
 
 .single-item img {
-  height: 750px;
+  height: auto;
   width: 1200px;
 }
 
 .slick-prev {
-  left: 30px!important;
+  left: 50px!important;
   z-index: 1;
 }
 
 .slick-next {
-  right: 30px!important;
+  right: 50px!important;
 }
 
 hr {
   display: none;
-}
-
-.row-post {
-  display: flex;
-  flex-wrap: wrap;
-}
-
-.side {
-  padding-top: 2rem;
-}
-
-.side h1 {
-  font-weight: 200;
-  font-size: 10px;
-  text-align: center;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-}
-
-.side p {
-  font-weight: 200;
-  font-size: 0.8rem;
-  width: 80%;
 }
 
 @media (max-width: 800px) {
@@ -906,45 +823,50 @@ hr {
 .circle-landscape {
   width: 200px;
   height: 200px;
-  margin: 1.25rem 0;
+  margin-bottom: -50%;
 }
 
-.cardTitle {
-  font-size: 18px;
-  padding-bottom: 2px;
-  display: inline-block;
-  text-align: center;
-  text-transform: uppercase;
+.card-title {
+  font-size: 1.25rem;
+  font-weight: 400;
 }
 
-.cardTitle a {
-  background-color: #f56565;
-}
-
-.cards,
-.post {
+.cards {
   display: flex;
   flex-wrap: wrap;
-  list-style: none;
-  margin: 0;
-  padding: 0;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
 }
 
-.cards__item {
+.cards-item {
   display: flex;
-  padding: 1rem;
+  padding: 0.5rem;
 }
 
-@media (min-width: 40rem) {
-  .cards__item {
+@media (min-width: 640px) {
+  .cards-item {
+    width: 100%;
+  }
+}
+
+@media (min-width: 768px) {
+  .cards-item {
     width: 50%;
   }
 }
 
-@media (min-width: 56rem) {
-  .cards__item {
-    width: 33.3333%;
+@media (min-width: 1024px) {
+  .cards-item {
+    width: 33.333333%;
   }
+}
+
+.cardv3 {
+  border-radius: 5px;
+  box-shadow: 0 15px 35px 0 rgba(42, 51, 83, 0.12), 0 5px 15px rgba(0, 0, 0, 0.06);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
 }
 
 .cardv3:hover {
@@ -953,7 +875,7 @@ hr {
   transition: all 0.15s ease;
 }
 
-.card__content {
+.card-content {
   display: flex;
   flex: 2 1 auto;
   flex-direction: column;
@@ -968,17 +890,12 @@ hr {
   margin-bottom: 1.25rem;
 }
 
-.comment-header {
-  display: flex;
-  flex-direction: row-reverse;
-}
-
 .comment {
   list-style-type: none;
   display: flex;
   flex-direction: column;
+  justify-content: flex-start;
   padding: 1.25rem;
-  background-color: #cbd5e0;
 }
 
 .comment hr {
@@ -991,12 +908,9 @@ hr {
 }
 
 .author {
-  font-size: 13px;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  margin-bottom: 6px;
-  color: #424242;
-  flex: 90%;
+  font-size: 0.875rem;
+  letter-spacing: 0.025em;
+  color: #4a5568;
 }
 
 span.date,
@@ -1005,6 +919,10 @@ span.date,
   font-style: italic;
   margin-bottom: 6px;
   color: #999;
+}
+
+.form-group {
+  width: 100%;
 }
 
 .buttons {
@@ -1041,13 +959,13 @@ span.date,
   border-radius: 5px;
   border-width: 1px;
   border-width: 2px;
-  background-color: #e53e3e;
-  width: 8.5rem;
+  background-color: #718096;
+  color: #fff;
 }
 
 .read-more-btn:hover {
-  transition: all 0.21s ease-in;
-  background-color: #fc8181;
+  transition: all 0.21s ease-in-out;
+  background-color: #cbd5e0;
   color: #fff;
 }
 
@@ -1063,19 +981,22 @@ span.date,
 }
 
 .submit-button {
-  border-radius: 20px;
-  padding: 10px;
-  border: none;
+  border-radius: 9999px;
+  padding: 1rem;
+  border-color: #fff;
   text-align: center;
+}
+
+.submit-button:hover {
+  color: white;
+  background-color: rgba(0, 0, 0, 0.2);
+  transition: 0.2s ease-out;
 }
 
 .button-circled {
   border-radius: 100%;
   width: 8em;
   height: 8em;
-  line-height: 8em;
-  text-align: center;
-  font-size: 1em;
   padding: 0;
   background-color: rgba(0, 0, 0, 0.4);
   color: #fff;
@@ -1179,15 +1100,21 @@ img {
 
 html,
 body {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-  /*color: white;*/
+  font-family: Montserrat;
+  color: #1a202c;
+  height: 100%;
   padding-top: 0px;
   box-sizing: border-box;
+  scroll-behavior: smooth;
 }
 
 html :hover,
 body :hover {
   text-decoration: none;
+}
+
+#app {
+  height: 100%;
 }
 
 .container {
@@ -1225,7 +1152,6 @@ body :hover {
 .main-box {
   width: 50%;
   display: flex;
-  padding: 10px;
   color: white;
   text-align: center;
 }
@@ -1257,7 +1183,7 @@ body :hover {
   position: absolute;
   z-index: 1;
   height: 100%;
-  background: linear-gradient(180deg, rgba(38, 38, 29, 0.3) 0%, rgba(0, 0, 0, 0) 98.62%);
+  background: linear-gradient(326deg, rgba(38, 38, 29, 0.6) 0%, rgba(0, 0, 0, 0) 98.62%);
   width: 100%;
 }
 
@@ -1273,12 +1199,12 @@ body :hover {
 
 .test {
   height: 100%;
+  width: 100%;
   text-align: center;
-  margin-right: 10px;
 }
 
 h1 {
-  font-size: 1.125rem;
+  font-size: 1.5rem;
 }
 
 hr {
@@ -1288,13 +1214,13 @@ hr {
   margin: 10px auto;
 }
 
-.homepage {
-  color: black;
-  background-color: white;
-  border-radius: 20px;
-  padding: 10px;
-  border: none;
+input {
+  color: #1a202c;
+  background-color: #fff;
+  border-radius: 9999px;
   text-align: center;
+  padding: 1rem;
+  padding: 10px;
 }
 
 input:focus {
@@ -1319,6 +1245,31 @@ input:focus {
 
 ::placeholder {
   color: rgba(0, 0, 0, 0.2);
+}
+
+.form-style {
+  width: 100%;
+  padding: 2rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.form-style .form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+input {
+  width: 50%;
+  border-radius: 9999px;
+  border-color: #cbd5e0;
+  border-width: 2px;
+}
+
+@media (min-width: 768px) {
+  .form-style {
+    width: 66.666667%;
+  }
 }
 
 /**
@@ -12091,15 +12042,6 @@ img.logo {
 
 a {
   text-decoration: none;
-}
-
-.formStyle {
-  width: 60%;
-  margin: 0 auto;
-}
-
-.formStyle input {
-  width: 100%;
 }
 
 .pageTitle {

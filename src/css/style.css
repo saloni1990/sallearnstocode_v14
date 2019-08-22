@@ -47,105 +47,35 @@
 a {
   color: rgba(0, 0, 0, 0.9);
 }
-.flex-nav {
+nav {
   @apply bg-gray-200 flex flex-wrap flex-col;
 }
-@screen md {
-  .top {
-    @apply hidden;
-  }
-}
-.flex-nav .brand {
+nav .brand {
   flex-basis: 100%;
   font-size: 20px;
 }
+nav .navigation {
+  @apply flex justify-center;
+}
+nav .navigation ul {
+  @apply w-full flex justify-center list-none flex-wrap py-8 max-w-6xl mx-auto;
+}
+nav .navigation ul li {
+  @apply text-sm tracking-wider px-4;
+}
 .top {
-  @apply text-lg font-bold bg-gray-200;
+  @apply text-lg font-bold bg-gray-200 text-center;
 }
 .top a {
-  font-weight: 100;
-  letter-spacing: 2px;
-  text-decoration: none;
-  padding: 20px 0;
-  display: inline-block;
-  width: 100%;
-  text-align: center;
+  @apply font-hairline tracking-wide no-underline py-8 w-full text-center;
   transition: all 0.5s;
 }
-.flex-nav ul li a {
-  font-weight: 100;
-  letter-spacing: 2px;
-  text-decoration: none;
-  padding: 20px 5px;
-  display: inline-block;
-  width: 100%;
-  text-align: center;
-  transition: all 0.5s;
-}
-.flex-nav ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  display: flex;
-  flex-wrap: wrap;
-}
-.flex-nav li {
-  flex: 3;
-  flex-wrap: wrap;
-  font-size: 10px;
-}
-.flex-nav .social {
-  flex: 0;
-}
-@media all and (max-width: 850px) {
-  /* Flex Container */
-  .flex-nav ul li {
-    flex-basis: 100%;
-  }
-  .flex-nav ul li a {
-    padding: 5px;
-    font-size: 0.8rem;
-  }
-  .flex-nav ul .brand {
-    display: none;
-  }
-  .wrapper {
-    display: flex;
-    flex-direction: column;
-  }
-  /* Flex item */
-  .wrapper > * {
-    order: 999;
-  }
-  .flex-nav {
-    order: 1;
-  }
-  .top .toggleNav {
-    display: block;
-  }
-  .flex-nav ul {
-    display: none;
-  }
-  .flex-nav ul.open {
-    display: flex;
-  }
-  .flex-nav ul.hover {
-    display: flex;
-  }
-  .top {
-    order: 2;
-  }
-  .flex-nav .social {
-    flex: 1 1 25%;
-  }
+.top li {
+  @apply py-2;
 }
 footer {
   background: #f8f9fa;
-  height: 100%;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  margin: 0 auto;
+  @apply flex flex-wrap justify-center items-end;
 }
 .social-footer {
   display: flex;
@@ -170,6 +100,7 @@ footer {
 }
 .social-footer a:hover {
   transition: all 0.21s ease-in;
+  @apply bg-gray-600;
 }
 .footer-content {
   display: flex;
@@ -185,37 +116,18 @@ footer {
   transition: all 0.21s ease-in;
 }
 .single-item img {
-  height: 750px;
+  height: auto;
   width: 1200px;
 }
 .slick-prev {
-  left: 30px!important;
+  left: 50px!important;
   z-index: 1;
 }
 .slick-next {
-  right: 30px!important;
+  right: 50px!important;
 }
 hr {
   display: none;
-}
-.row-post {
-  display: flex;
-  flex-wrap: wrap;
-}
-.side {
-  padding-top: 2rem;
-}
-.side h1 {
-  font-weight: 200;
-  font-size: 10px;
-  text-align: center;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-}
-.side p {
-  font-weight: 200;
-  font-size: 0.8rem;
-  width: 80%;
 }
 @media (max-width: 800px) {
   hr {
@@ -225,46 +137,45 @@ hr {
 .circle-landscape {
   width: 200px;
   height: 200px;
-  margin: 1.25rem 0;
+  margin-bottom: -50%;
 }
-.cardTitle {
-  font-size: 18px;
-  padding-bottom: 2px;
-  display: inline-block;
-  text-align: center;
-  text-transform: uppercase;
+.card-title {
+  @apply text-xl font-normal;
 }
-.cardTitle a {
-  @apply bg-red-500;
+.cards {
+  @apply flex flex-wrap px-2;
 }
-.cards,
-.post {
-  display: flex;
-  flex-wrap: wrap;
-  list-style: none;
-  margin: 0;
-  padding: 0;
+.cards-item {
+  @apply flex p-2;
 }
-.cards__item {
-  display: flex;
-  padding: 1rem;
-}
-@media (min-width: 40rem) {
-  .cards__item {
-    width: 50%;
+@screen sm {
+  .cards-item {
+    @apply w-full;
   }
 }
-@media (min-width: 56rem) {
-  .cards__item {
-    width: 33.3333%;
+@screen md {
+  .cards-item {
+    @apply w-1/2;
   }
+}
+@screen lg {
+  .cards-item {
+    @apply w-1/3;
+  }
+}
+.cardv3 {
+  border-radius: 5px;
+  box-shadow: 0 15px 35px 0 rgba(42, 51, 83, 0.12), 0 5px 15px rgba(0, 0, 0, 0.06);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
 }
 .cardv3:hover {
   box-shadow: 0 15px 45px 0 rgba(42, 51, 83, 0.12), 0 5px 15px rgba(0, 0, 0, 0.06);
   transform: translate(0, -2px);
   transition: all 0.15s ease;
 }
-.card__content {
+.card-content {
   display: flex;
   flex: 2 1 auto;
   flex-direction: column;
@@ -277,12 +188,8 @@ hr {
   line-height: 1.5;
   margin-bottom: 1.25rem;
 }
-.comment-header {
-  display: flex;
-  flex-direction: row-reverse;
-}
 .comment {
-  @apply list-none flex flex-col p-5 bg-gray-400;
+  @apply list-none flex flex-col justify-start p-5;
 }
 .comment hr {
   display: block;
@@ -292,12 +199,7 @@ hr {
   flex: 10%;
 }
 .author {
-  font-size: 13px;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  margin-bottom: 6px;
-  color: #424242;
-  flex: 90%;
+  @apply text-sm tracking-wide text-gray-700;
 }
 span.date,
 .post-author {
@@ -305,6 +207,9 @@ span.date,
   font-style: italic;
   margin-bottom: 6px;
   color: #999;
+}
+.form-group {
+  @apply w-full;
 }
 .buttons {
   display: flex;
@@ -334,12 +239,12 @@ span.date,
 .read-more-btn {
   @apply rounded-sm;
   border-radius: 5px;
-  @apply border border-2 bg-red-600;
-  width: 8.5rem;
+  @apply border border-2 bg-gray-600;
+  color: #fff;
 }
 .read-more-btn:hover {
-  transition: all 0.21s ease-in;
-  @apply bg-red-400;
+  transition: all 0.21s ease-in-out;
+  @apply bg-gray-400;
   color: #fff;
 }
 .button-container {
@@ -352,18 +257,17 @@ span.date,
   margin-right: 1rem;
 }
 .submit-button {
-  border-radius: 20px;
-  padding: 10px;
-  border: none;
-  text-align: center;
+  @apply rounded-full p-4 border-white text-center;
+}
+.submit-button:hover {
+  color: white;
+  background-color: rgba(0, 0, 0, 0.2);
+  transition: 0.2s ease-out;
 }
 .button-circled {
   border-radius: 100%;
   width: 8em;
   height: 8em;
-  line-height: 8em;
-  text-align: center;
-  font-size: 1em;
   padding: 0;
   background-color: rgba(0, 0, 0, 0.4);
   color: #fff;
@@ -448,14 +352,18 @@ img {
 }
 html,
 body {
-  @apply font-sans;
-  /*color: white;*/
+  font-family: Montserrat;
+  @apply text-gray-900 h-full;
   padding-top: 0px;
   box-sizing: border-box;
+  scroll-behavior: smooth;
 }
 html :hover,
 body :hover {
   text-decoration: none;
+}
+#app {
+  @apply h-full;
 }
 .container {
   @apply rounded-sm;
@@ -489,7 +397,6 @@ body :hover {
 .main-box {
   width: 50%;
   display: flex;
-  padding: 10px;
   color: white;
   text-align: center;
 }
@@ -517,7 +424,7 @@ body :hover {
   position: absolute;
   z-index: 1;
   height: 100%;
-  background: linear-gradient(180deg, rgba(38, 38, 29, 0.3) 0%, rgba(0, 0, 0, 0) 98.62%);
+  background: linear-gradient(326deg, rgba(38, 38, 29, 0.6) 0%, rgba(0, 0, 0, 0) 98.62%);
   width: 100%;
 }
 .stacked-img {
@@ -529,12 +436,10 @@ body :hover {
   margin-bottom: -10px;
 }
 .test {
-  height: 100%;
-  text-align: center;
-  margin-right: 10px;
+  @apply h-full w-full text-center;
 }
 h1 {
-  @apply text-lg;
+  @apply text-2xl;
 }
 hr {
   width: 50%;
@@ -542,19 +447,29 @@ hr {
   border-bottom: 1px solid rgba(0, 0, 0, 0.2);
   margin: 10px auto;
 }
-.homepage {
-  color: black;
-  background-color: white;
-  border-radius: 20px;
+input {
+  @apply text-gray-900 bg-white rounded-full text-center p-4;
   padding: 10px;
-  border: none;
-  text-align: center;
 }
 input:focus {
   outline: none;
 }
 ::placeholder {
   color: rgba(0, 0, 0, 0.2);
+}
+.form-style {
+  @apply w-full p-8 mx-auto;
+}
+.form-style .form-group {
+  @apply flex flex-col;
+}
+input {
+  @apply w-1/2  rounded-full border-gray-400 border-2;
+}
+@screen md {
+  .form-style {
+    @apply w-2/3;
+  }
 }
 /**
   * This injects all of Tailwind's utility classes, generated based on your
@@ -589,13 +504,6 @@ img.logo {
 }
 a {
   text-decoration: none;
-}
-.formStyle {
-  width: 60%;
-  margin: 0 auto;
-}
-.formStyle input {
-  width: 100%;
 }
 .pageTitle {
   margin-top: 1em;

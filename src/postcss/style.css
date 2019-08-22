@@ -903,11 +903,6 @@ hr {
   text-transform: uppercase;
 }
 
-.side p {
-  font-weight: 200;
-  font-size: 0.8rem;
-  width: 80%;
-}
 
 @media (max-width: 800px) {
   hr {
@@ -923,7 +918,6 @@ hr {
 .circle-landscape {
   width: 200px;
   height: 200px;
-  margin: 1.25rem 0;
 }
 
 .post-wrapper {
@@ -1003,9 +997,6 @@ iframe {
 }
 
 .card__content {
-  display: flex;
-  flex: 2 1 auto;
-  flex-direction: column;
   padding: 1rem;
   justify-content: space-between;
 }
@@ -12158,15 +12149,6 @@ img.logo {
 
 a {
   text-decoration: none;
-}
-
-.formStyle {
-  width: 60%;
-  margin: 0 auto;
-}
-
-.formStyle input {
-  width: 100%;
 }
 
 .pageTitle {

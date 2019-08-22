@@ -31,13 +31,13 @@
   
 .read-more-btn {
      .border-radius;
-     @apply border border-2 bg-red-600;
-     width: 8.5rem;
+     @apply border border-2 bg-gray-600;
+     color: #fff;
 
   
     &:hover{
-        transition: all .21s ease-in;
-        @apply bg-red-400;
+        transition: all .21s ease-in-out;
+        @apply bg-gray-400;
         color: #fff;
     }
   
@@ -56,20 +56,19 @@
 }
 
 .submit-button {
+    @apply rounded-full p-4 border-white text-center;
 
-    border-radius: 20px;
-    padding: 10px;
-    border: none;
-    text-align: center;
+    &:hover {
+        color: white;
+        background-color: rgba(0, 0, 0, 0.2);
+        transition: .2s ease-out;
+    }
 }
 
 .button-circled {
     border-radius: 100%;
     width: 8em;
     height: 8em;
-    line-height: 8em;
-    text-align: center;
-    font-size: 1em;
     padding: 0;
     background-color: rgba(0, 0, 0, 0.4);
     color: #fff;

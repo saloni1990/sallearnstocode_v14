@@ -1,10 +1,6 @@
 footer {
     background: #f8f9fa;
-    height: 100%;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    margin: 0 auto;
+    @apply flex flex-wrap justify-center items-end;
 }
 
 .social-footer {
@@ -30,6 +26,7 @@ footer {
 
         &:hover {
             transition: all .21s ease-in;
+            @apply bg-gray-600;
         }
 
     }

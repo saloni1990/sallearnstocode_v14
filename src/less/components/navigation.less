@@ -3,125 +3,36 @@ a {
 	color: rgba(0,0,0,0.9);
 }
 
+nav {
+    @apply bg-gray-200 flex flex-wrap flex-col ;
 
-.flex-nav {
-    @apply bg-gray-200 flex flex-wrap flex-col;
-}
-@screen md {
-    .top {
-      @apply hidden;
+    .brand {
+        flex-basis: 100%;
+        font-size: 20px;
     }
-}
+    .navigation {
+        @apply flex justify-center;
+        ul {
+            @apply w-full flex justify-center list-none flex-wrap py-8 max-w-6xl mx-auto ;
+        
+            li {
+                @apply text-sm tracking-wider px-4;
+            }
+        
+        }
 
-.flex-nav .brand {
-    flex-basis: 100%;
-    font-size: 20px;
+    }
 }
 
 .top {
-	@apply text-lg font-bold bg-gray-200;
-
-	a {
-		font-weight: 100;
-		letter-spacing: 2px;
-		text-decoration: none;
-		padding: 20px 0;
-		display: inline-block;
-		width: 100%;
-		text-align: center;
-		transition: all 0.5s;
-	}
-}
-
-.flex-nav{
-	ul {
-		li{
-			a {
-				font-weight: 100;
-				letter-spacing: 2px;
-				text-decoration: none;
-				padding: 20px 5px;
-				display: inline-block;
-				width: 100%;
-				text-align: center;
-				transition: all 0.5s;
-			}
-			
-		}
-	}
-}
-.flex-nav ul {
-	list-style: none;
-	margin: 0;
-	padding: 0;
-    display: flex;
-    flex-wrap: wrap; 
-  }
-
-
-  .flex-nav li{
-    flex: 3;
-    flex-wrap: wrap;
-    font-size: 10px;
-}
-  
-  
-  .flex-nav .social {
-	  flex: 0;
-  }
-
-
-@media all and (max-width: 850px) {
-    /* Flex Container */
-
-
-    .flex-nav {
-        ul {
-            li{
-                flex-basis: 100%;
-                a{
-                    padding: 5px;
-                    font-size: 0.8rem;
-                }
-            }
-        }
-        ul .brand {
-            display:  none;
-        }
-    }
-    .wrapper {
-        display: flex;
-        flex-direction: column;
-    }
-    /* Flex item */
-    .wrapper > * {
-        order: 999; 
-    }
-    .flex-nav {
-        order: 1;
-    }
-    .top .toggleNav {
-        display: block;
-    }
-    .flex-nav ul {
-        display: none;
+	@apply text-lg font-bold bg-gray-200 text-center;
+    a {
+        @apply font-hairline tracking-wide no-underline py-8  w-full text-center;
+        transition: all 0.5s;
     }
 
-    .flex-nav ul.open{
-        display: flex;
-    }
-
-    .flex-nav ul.hover{
-        display: flex;
-    }
-
-    .top {
-        order: 2;
-    }
-
-
-    .flex-nav .social {
-        flex: 1 1 25%;
+    li {
+        @apply py-2;
     }
 
 }
