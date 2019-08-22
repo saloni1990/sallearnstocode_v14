@@ -2,9 +2,9 @@
     
 <header>
 
-    <div class="container">
 
-        <div class="single-item feat-item">
+
+        <div class="single-item feat-item p-8">
             <% blog.forEach(function(blog){ %>
                 <div >
                     <img class="w-1/2" src="<%= blog.image %>">
@@ -13,10 +13,11 @@
                 
         </div>
         
-            
-    </div>
+        <% if(currentUser){ %>
+        
+            <a class="buttons" href="/blog/newpost">Add New Blog</a> 
 
-    <a class="buttons" href="/blog/newpost">Add New Blog</a> 
+        <% } %>
 
     
 </header>
@@ -25,28 +26,30 @@
 
 <!-- Flex Container -->
  <div class="card-wrapper">
-    <ul class="cards">
+    <div class="cards">
         <% blog.forEach(function(blog){ %>
-            <li class="cards__item">
+            <div class="cards-item">
                 
                 <div class="cardv3">
                     <div><img class="post-img" src="<%= blog.image %>"> </div>
-                    <div class="card__content">
+                    <div class="card-content">
                         <div class="card__content__wrapper">
-                            <h4 class="cardTitle"><a href="/blog/<%= blog._id %>"><%= blog.title %></a></h4>
+                            <h4 class="card-title"><a href="/blog/<%= blog._id %>"><%= blog.title %></a></h4>
                             <% if (typeof blog.post == 'undefined' ) { %>
                                 <p> no content</p>  
                             <% } else { %>
                                 <p> <%- blog.post.substring(0, 150) %>...</p>  
                             <% } %>
                         </div>
-
-                        <a href="/blog/<%= blog._id %>" class="buttons read-more-btn">Read More</a>
+                        <div class="flex justify-center">
+                            <a href="/blog/<%= blog._id %>" class="buttons read-more-btn">Read More</a>
+                        </div>
+                        
                     </div>
                 </div>
-            </li>
+            </div>
         <% }); %>
-    </ul>
+        </div>
  </div>
 
  <% include ../partials/about %>
