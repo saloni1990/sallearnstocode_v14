@@ -11,8 +11,8 @@
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node app.js --open --config webpack.dev.js",
-    "build": "webpack --config webpack.prod.js",
+    "start": "node app.js",
+    "build": "webpack --mode production --config ./webpack.prod.js",
     "compile": "gulp"
   },
   "author": "",
