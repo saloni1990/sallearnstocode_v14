@@ -3,7 +3,6 @@ const VueLoaderPlugin = require('vue-loader/lib/plugin');
 
 module.exports = {
   mode:'development',
-  watch: true,
   watchOptions: {
     ignored: /node_modules/
   },
