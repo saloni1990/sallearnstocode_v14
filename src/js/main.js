@@ -6,12 +6,13 @@ $(document).ready(function(){
 });
 
 import Vue from 'vue';
-
+Vue.config.devtools = true;
+Vue.config.ignoredElements = ['trix-editor', 'trix-toolbar']
 
 Vue.component('card-modal', require('./components/cardModal.vue').default);
 Vue.component('mobile-nav', require('./components/mobileNav.vue').default);
 
-Vue.config.ignoredElements = ['trix-editor']
+
 
 Vue.component('about-close', {
 
@@ -157,4 +158,3 @@ var app = new Vue ({
         },
     }
 });
-Vue.config.devtools = true;
