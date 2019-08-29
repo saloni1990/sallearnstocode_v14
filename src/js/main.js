@@ -5,9 +5,9 @@ $(document).ready(function(){
 
 });
 
-import Vue from 'vue';
+import Vue from 'vue/dist/vue.min.js';
 Vue.config.devtools = true;
-Vue.config.ignoredElements = ['trix-editor', 'trix-toolbar']
+Vue.config.ignoredElements = ['trix-editor', 'trix-toolbar'];
 
 Vue.component('card-modal', require('./components/cardModal.vue').default);
 Vue.component('mobile-nav', require('./components/mobileNav.vue').default);
