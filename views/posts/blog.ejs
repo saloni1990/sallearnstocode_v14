@@ -25,32 +25,32 @@
 
 
 <!-- Flex Container -->
- <div class="card-wrapper">
+
+<div class="card-wrapper">
     <div class="cards">
         <% blog.forEach(function(blog){ %>
-            <div class="cards-item">
-                
+            <div class="card-item">
                 <div class="cardv3">
                     <div><img class="post-img" src="<%= blog.image %>"> </div>
                     <div class="card-content">
                         <div class="card__content__wrapper">
-                            <h4 class="card-title"><a href="/blog/<%= blog._id %>"><%= blog.title %></a></h4>
-                            <% if (typeof blog.post == 'undefined' ) { %>
-                                <p> no content</p>  
-                            <% } else { %>
-                                <p> <%- blog.post.substring(0, 150) %>...</p>  
-                            <% } %>
+                                <h4 class="card-title"><a href="/blog/<%= blog._id %>"><%= blog.title %></a></h4>
+                                <% if (typeof blog.post == 'undefined' ) { %>
+                                    <p> no content</p>  
+                                <% } else { %>
+                                    <p> <%- blog.post.substring(0, 150) %>...</p>  
+                                <% } %>
+
+                                <div class="flex justify-center">
+                                    <a href="/blog/<%= blog._id %>" class="buttons read-more-btn">Read More</a>
+                                </div>
                         </div>
-                        <div class="flex justify-center">
-                            <a href="/blog/<%= blog._id %>" class="buttons read-more-btn">Read More</a>
-                        </div>
-                        
                     </div>
                 </div>
             </div>
         <% }); %>
-        </div>
- </div>
+    </div>
+</div>
 
  <% include ../partials/about %>
 
