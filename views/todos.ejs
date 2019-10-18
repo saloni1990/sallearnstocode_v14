@@ -1,10 +1,11 @@
 
 <% include ./partials/header %>
 
-<h1>Vue.js Playground</h1>
 
 <div id="todos">
         <div class="container">
+                        <h1 class="text-center">Vue.js Playground</h1>
+
                         <input type="text" id="input" v-model="message">
 
                         <h1 v-bind:class="className">The value of the input is: <span v-bind:style="{color:red}">{{message }}</span></h1>
